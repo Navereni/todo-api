@@ -37,16 +37,12 @@ def delete_task(id):
     response = requests.delete(f"http://todo-app-backend:5000/delete/task/{id}")
     return redirect(url_for('home'))
 
-# @app.route('/complete/task/<int:id>')
-# def complete_task(id):
-#     task = Tasks.query.get(id)
-#     task.completed = True
-#     db.session.commit()
-#     return redirect(url_for('home'))
+@app.route('/complete/task/<int:id>')
+def complete_task(id):
+    response = requests.put(f"http://todo-app-backend:5000/complete/task/{id}")
+    return redirect(url_for('home'))
 
-# @app.route('/incomplete/task/<int:id>')
-# def incomplete_task(id):
-#     task = Tasks.query.get(id)
-#     task.completed = False
-#     db.session.commit()
-#     return redirect(url_for('home'))
+@app.route('/incomplete/task/<int:id>')
+def incomplete_task(id):
+    response = requests.put(f"http://todo-app-backend:5000/incomplete/task/{id}")
+    return redirect(url_for('home'))
