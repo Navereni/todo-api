@@ -9,7 +9,7 @@ services:
       published: 80
   backend:
     build: ./backend
-    image: {DOCKER_HUB_CREDS_USR}/todo-app-backend:latest
+    image: ${DOCKER_HUB_CREDS_USR}/todo-app-backend:latest
     container_name: todo-app-backend
     environment:
       DATABASE_URI:
