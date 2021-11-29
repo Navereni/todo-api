@@ -3,7 +3,7 @@
 echo "Test Stage"
 
 # venv created, source
-pytho3 -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 
 # pip3 installs, pytest, flask_testing, frontend requirements.txt and backend requirements.txt
